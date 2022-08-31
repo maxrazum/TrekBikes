@@ -1,6 +1,3 @@
-const express = require('express');
-const app = express();
-const path = require('path');
 const mongoose = require('mongoose');
 
 const Item = require('./models/item');
@@ -14,13 +11,16 @@ mongoose.connect('mongodb://localhost:27017/trekBikes', { useNewUrlParser: true,
         console.log(err)
     });
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-app.get('/hello', (req, res) => {
-    res.send('Hello World')
+const p = new Item({
+    name: 'FX 3',
+    price: 1149.99,
+    category: 'hybrid'
 });
 
-app.listen(3000, () => {
-    console.log("App is listening on port 3000")
-});
+p.save()
+    .then(p => {
+        console.log(p)
+    })
+    .catch(e => {
+        console.log(e)
+    });
