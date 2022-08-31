@@ -12,7 +12,7 @@ const itemSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['mountain', 'hybrid', 'electric', 'road']
+        enum: ['mountain', 'hybrid', 'road']
     }
 });
 
