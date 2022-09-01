@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./head'); %>
+    <title><%= item.name %></title>
+</head>
+
+<body>
+    <h1><%= item.name %> </h1>
+    <ul>
+        <li>Price: $<%= item.price %> </li>
+        <li>Category: <%= item.category %> </li>
+    </ul>
+    <a href="/items">All Bikes</a>
+
+    <footer>
+        <%- include('./footer'); %>
+    </footer>
+
+</body>
+
+</html>
