@@ -24,7 +24,7 @@ app.use(methodOverride('_method'));
 const categories = ['mountain', 'hybrid', 'road'];
 
 app.get('/items', async (req, res) => {
-    const items = await Item.find({})
+    const items = await Item.find({});
     res.render('items/index', { items })
 });
 
@@ -40,7 +40,7 @@ app.post('/items', async (req, res) => {
 
 app.get('/items/:id', async (req, res) => {
     const { id } = req.params;
-    const item = await Item.findById(id)
+    const item = await Item.findById(id);
     res.render('items/show', { item })
 });
 
@@ -54,6 +54,12 @@ app.put('/items/:id', async (req, res) => {
     const { id } = req.params;
     const item = await Item.findByIdAndUpdate(id, req.body, { runValidators: true, new: true});
     res.redirect(`/items/${item._id}`);
+});
+
+app.delete('/items/:id', async (req, res) => {
+    const { id } = req.params;
+    const deleteItem = await Item.findByIdAndDelete(id);
+    res.redirect('/items')
 });
 
 app.listen(3000, () => {

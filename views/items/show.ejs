@@ -14,6 +14,9 @@
     </ul>
     <a href="/items">All Bikes</a>
     <a href="/items/<%=item._id%>/edit">Edit Model</a>
+    <form action="/items/<%=item._id%>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
 
     <footer>
         <%- include('./footer'); %>

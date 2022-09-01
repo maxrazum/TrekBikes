@@ -3,11 +3,11 @@
 
 <head>
     <%- include('./head'); %>
-    <title>All Items</title>
+    <title>All Bikes</title>
 </head>
 
 <body>
-    <h1 class="text-center">All Items are going to be here</h1><br>
+    <h1 class="text-center">All Trek Models</h1><br>
     <ul>
         <% for(let item of items) { %>
         <li><a href="/items/<%=item._id%>"><%= item.name %></a></li>
