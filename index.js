@@ -17,9 +17,21 @@ mongoose.connect('mongodb://localhost:27017/trekBikes', { useNewUrlParser: true,
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(express.urlencoded({ extended: true}));
+
 app.get('/items', async (req, res) => {
     const items = await Item.find({})
     res.render('items/index', { items })
+});
+
+app.get('/items/new', (req, res) => {
+    res.render('items/new')
+});
+
+app.post('/items', async (req, res) => {
+    const newItem = new Item(req.body);
+    await newItem.save();
+    res.redirect(`/items/${newItem._id}`)
 });
 
 app.get('/items/:id', async (req, res) => {
