@@ -3,16 +3,16 @@
 
 <head>
     <%- include('./head'); %>
-    <title>New Bike</title>
+    <title>Edit</title>
 </head>
 
 <body>
-    <h1>Add New Bike Model</h1>
-    <form action="/items" method="POST">
+    <h1>Edit Bike Model</h1>
+    <form action="/items/<%=item._id%>?_method=PUT" method="POST">
         <label for="name">Bike Model</label>
-        <input type="text" name="name" id="name" placeholder="e.g. FX 3">
+        <input type="text" name="name" id="name" placeholder="e.g. FX 3" value="<%=item.name%>">
         <label for="price">Bike Price</label>
-        <input type="number" name="price" id="price" placeholder="e.g. 987.88">
+        <input type="number" name="price" id="price" placeholder="e.g. 987.88" value="<%=item.price%>">
         <label for="category">Bike Category</label>
         <select name="category" id="category">
             <option value="mountain">mountain</option>
@@ -21,6 +21,8 @@
         </select>
         <button>Submit</button>
     </form>
+
+    <a href="/items/<%=item._id%>">Cancel</a>
 
     <footer>
         <%- include('./footer'); %>
