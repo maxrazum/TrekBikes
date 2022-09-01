@@ -12,7 +12,7 @@
         <label for="name">Bike Model</label>
         <input type="text" name="name" id="name" placeholder="e.g. FX 3">
         <label for="price">Bike Price</label>
-        <input type="number" name="price" id="price" placeholder="e.g. 987.88">
+        <input type="number" name="price" id="price" min="0" step=".01" placeholder="e.g. 987.88">
         <label for="category">Bike Category</label>
         <select name="category" id="category">
             <% for(let category of categories){ %>

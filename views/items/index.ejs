@@ -7,13 +7,16 @@
 </head>
 
 <body>
-    <h1 class="text-center">All Trek Models</h1><br>
+    <h1 class="text-center"><%= category %>  Models</h1><br>
     <ul>
         <% for(let item of items) { %>
         <li><a href="/items/<%=item._id%>"><%= item.name %></a></li>
         <% }%>
     </ul>
     <a href="/items/new">Add New Model</a>
+    <% if(category !== 'All') { %>
+        <a href="/items">All Models</a>
+    <% } %>
 
     <footer>
         <%- include('./footer'); %>

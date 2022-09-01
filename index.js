@@ -24,8 +24,14 @@ app.use(methodOverride('_method'));
 const categories = ['mountain', 'hybrid', 'road'];
 
 app.get('/items', async (req, res) => {
-    const items = await Item.find({});
-    res.render('items/index', { items })
+    const { category } = req.query;
+    if(category){
+        const items = await Item.find({ category })
+        res.render('items/index', { items, category })
+    } else {
+        const items = await Item.find({})
+        res.render('items/index', { items, category: 'All' })
+    }
 });
 
 app.get('/items/new', (req, res) => {
