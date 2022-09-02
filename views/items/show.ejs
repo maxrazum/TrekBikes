@@ -3,19 +3,43 @@
 
 <head>
     <%- include('./head'); %>
-    <title><%= item.name %></title>
+        <title>
+            <%= item.name %>
+        </title>
 </head>
 
 <body>
-    <h1><%= item.name %> </h1>
-    <ul>
-        <li>Price: $<%= item.price %> </li>
-        <li>Category: <a href="/items?category=<%= item.category %>"><%= item.category %></a> </li>
-    </ul>
-    <a href="/items">All Bikes</a>
-    <a href="/items/<%=item._id%>/edit">Edit Model</a>
-    <form action="/items/<%=item._id%>?_method=DELETE" method="POST">
-        <button>Delete</button>
+    <nav id="mainNavbar" class="navbar border navbar-dark bg-dark navbar-expand-sm py-0 fixed-top">
+        <div class="container-fluid">
+            <%- include('./header'); %>
+                <div class="justify-content-end collapse navbar-collapse" id="navLinks">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/items" class="nav-link">All Models</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/items/<%=item._id%>/edit" class="nav-link">Edit Model</a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid py-5 text-center">
+        <h1 class="m-5">
+            <%= item.name %>
+        </h1>
+        <ul class="list-group">
+            <li class="mb-3">Price: <a class="list-group-item list-group-item-primary"> $<%= item.price %> </a></li>
+            <li>Category: <a class="list-group-item list-group-item-action list-group-item-warning"
+                    href="/items?category=<%= item.category %>">
+                    <%= item.category %>
+                </a> </li>
+        </ul>
+    </main>
+
+    <form class="text-center mb-5" action="/items/<%=item._id%>?_method=DELETE" method="POST">
+        <button class="btn btn-outline-danger">Delete</button>
     </form>
 
     <footer>

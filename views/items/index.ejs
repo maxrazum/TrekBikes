@@ -7,18 +7,18 @@
 </head>
 
 <body>
-    <nav id="mainNavbar" class="navbar navbar-dark bg-dark navbar-expand-md py-0 fixed-top">
+    <nav id="mainNavbar" class="navbar border navbar-dark bg-dark navbar-expand-sm py-0 fixed-top">
         <div class="container-fluid">
             <%- include('./header'); %>
-            <div class="collapse navbar-collapse" id="navLinks">
+            <div class="justify-content-end collapse navbar-collapse" id="navLinks">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <% if(category !== 'All') { %>
-                            <a href="/items"  class="nav-link">All Models</a>
+                            <a href="/items" class="nav-link">All Models</a>
                         <% } %>
                     </li>
                     <li class="nav-item">
-                        <a href="/items/new"  class="nav-link">Add New Model</a>
+                        <a href="/items/new" class="nav-link">Add New Model</a>
                     </li>
                 </ul>
             </div>
@@ -26,12 +26,12 @@
     </nav>
 
     <main class="container-fluid py-5 text-center">
-                <h2><%= category %> bikes models</h2>
-                <ul>
-                    <% for(let item of items) { %>
-                    <li><a href="/items/<%=item._id%>"><%= item.name %></a></li>
-                    <% }%>
-                </ul>
+        <h1 class="m-5"><%= category %> bikes models</h1>
+        <ul class="list-group">
+            <% for(let item of items) { %>
+            <li><a class="list-group-item list-group-item-action list-group-item-light" href="/items/<%=item._id%>"><%= item.name %></a></li>
+            <% }%>
+        </ul>
     </main>
 
 
