@@ -7,16 +7,33 @@
 </head>
 
 <body>
-    <h1 class="text-center"><%= category %>  Models</h1><br>
-    <ul>
-        <% for(let item of items) { %>
-        <li><a href="/items/<%=item._id%>"><%= item.name %></a></li>
-        <% }%>
-    </ul>
-    <a href="/items/new">Add New Model</a>
-    <% if(category !== 'All') { %>
-        <a href="/items">All Models</a>
-    <% } %>
+    <nav id="mainNavbar" class="navbar navbar-dark bg-dark navbar-expand-md py-0 fixed-top">
+        <div class="container-fluid">
+            <%- include('./header'); %>
+            <div class="collapse navbar-collapse" id="navLinks">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <% if(category !== 'All') { %>
+                            <a href="/items"  class="nav-link">All Models</a>
+                        <% } %>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/items/new"  class="nav-link">Add New Model</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid py-5 text-center">
+                <h2><%= category %> bikes models</h2>
+                <ul>
+                    <% for(let item of items) { %>
+                    <li><a href="/items/<%=item._id%>"><%= item.name %></a></li>
+                    <% }%>
+                </ul>
+    </main>
+
 
     <footer>
         <%- include('./footer'); %>

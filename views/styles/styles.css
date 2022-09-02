@@ -1,0 +1,71 @@
+body {
+    background: #FCC9B9;
+    font-family: "Nunito", sans-serif;
+}
+
+body.toyota {
+    background: #F8EFC9;
+    font-family: "Nunito", sans-serif;
+}
+
+body.honda {
+    background: #E1E1E1;
+    font-family: "Nunito", sans-serif;
+}
+
+body.mazda {
+    background: #C7E4EE;
+    font-family: "Nunito", sans-serif;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+.blurb h2 {
+    font-weight: 100;
+    font-size: 2.5rem;
+}
+
+.blurb p {
+    color: #F7FDFF;
+    font-weight: 100;
+    font-size: 1.25rem;
+    line-height: 2;
+}
+
+.content-top {
+    margin-top: 150px;
+}
+
+.content {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+section.active-section {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 1;
+}
+
+#mainNavbar .navbar-brand {
+    font-size: 1.5rem;
+    font-size: 1.5em;
+}
+
+#headingGroup span {
+    color: #ea1c2c;
+}
+
+#headingGroup h1 {
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+@media (max-width: 1200px) {
+    #headingGroup h1 {
+        font-weight: 100;
+        font-size: 3rem;
+    }
+}
