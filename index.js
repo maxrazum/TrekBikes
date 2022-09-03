@@ -65,7 +65,7 @@ app.put('/items/:id', async (req, res) => {
 
 app.delete('/items/:id', async (req, res) => {
     const { id } = req.params;
-    const deleteItem = await Item.findByIdAndDelete(id);
+    await Item.findByIdAndDelete(id);
     res.redirect('/items')
 });
 
