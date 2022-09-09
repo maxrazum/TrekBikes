@@ -23,16 +23,28 @@
     <main class="container-fluid py-5 text-center">
         <h1 class="m-5">Edit Bike Model</h1>
 
-        <form action="/items/<%=item._id%>?_method=PUT" method="POST">
+        <form action="/items/<%=item._id%>?_method=PUT" method="POST" novalidate class="validated-form">
             <div class="mb-3">
                 <label for="name" class="form-label">Bike Model:</label>
                 <input type="text" class="form-control mx-auto w-auto" name="name" id="name" placeholder="e.g. FX 3"
-                    value="<%=item.name%>">
+                    value="<%=item.name%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a model name.
+                </div>
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Bike Price:</label>
                 <input type="number" class="form-control mx-auto w-auto" name="price" id="price" min="0" step=".01"
-                    placeholder="e.g. 987.88" value="<%=item.price%>">
+                    placeholder="e.g. 987.88" value="<%=item.price%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a price.
+                </div>
             </div>
             <div class="mb-3">
                 <label for="category" class="form-label">Bike Category:</label>
@@ -44,13 +56,15 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-primary my-5">Submit</button>
-            <button class="btn btn-outline-secondary my-5" href="/items/<%=item._id%>">Cancel</button>
+            <a class="btn btn-outline-secondary my-5" href="/items/<%=item._id%>">Cancel</a>
         </form>
     </main>
 
     <footer>
         <%- include('./footer'); %>
     </footer>
+
+    <%- include('./validator'); %>
 
 </body>
 

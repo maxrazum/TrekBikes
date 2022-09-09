@@ -23,15 +23,28 @@
     <main class="container-fluid py-5 text-center">
         <h1 class="m-5">Add New Bike Model</h1>
 
-        <form action="/items" method="POST">
+        <form action="/items" method="POST" novalidate class="validated-form">
             <div class="mb-3">
                 <label for="name" class="form-label">Bike Model:</label>
-                <input type="text" class="form-control mx-auto w-auto" name="name" id="name" placeholder="e.g. FX 3">
+                <input type="text" class="form-control mx-auto w-auto" name="name" id="name" placeholder="e.g. FX 3"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a model name.
+                </div>
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Bike Price:</label>
                 <input type="number" class="form-control mx-auto w-auto" name="price" id="price" min="0" step=".01"
-                    placeholder="e.g. 121.99">
+                    placeholder="e.g. 121.99" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a price.
+                </div>
             </div>
             <div class="mb-3">
                 <label for="category" class="form-label">Bike Category:</label>
@@ -52,6 +65,8 @@
     <footer>
         <%- include('./footer'); %>
     </footer>
+
+    <%- include('./validator'); %>
 
 </body>
 
