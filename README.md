@@ -47,3 +47,7 @@ npm i nodemon
 ```
 nodemon index.js
 ```
+5) Navigate to:
+```
+http://localhost:3000/items/
+```
