@@ -2,16 +2,16 @@
 
 ## Demo
 ### Adding new Bike Model
-<img src="/readme_img/addModel.gif" height="400">
+<img src="/readme_img/addModel.gif" width="100%" alt="adding a bike model">
 
 ### Editing a Bike Model
-<img src="/readme_img/editModel.gif" height="400">
+<img src="/readme_img/editModel.gif" width="100%" alt="editing a bike model">
 
 ### Deleting a Bike Model
-<img src="/readme_img/deleteModel.gif" height="400">
+<img src="/readme_img/deleteModel.gif" width="100%" alt="deleting a bike model">
 
 ### Responsive design in action
-<img src="/readme_img/mobileVersion.gif" height="400">
+<img src="/readme_img/mobileVersion.gif" width="100%" alt="responsive design">
 
 
 #### FRAMEWORKS
